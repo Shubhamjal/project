@@ -64,15 +64,22 @@ class MainActivity : AppCompatActivity() {
                 if (editText3?.text.toString().isNullOrEmpty()){
                     editText3?.error="Enter Address"
                 }
-                else if(editText5?.text.toString()!=editText4?.text.toString()){
-                    editText5.error="Wrong Password"
+                if (editText4?.text.toString().isNullOrEmpty()){
+                    editText4?.error="Enter Password"
+                }
+                if (editText5?.text.toString().isNullOrEmpty()){
+                    editText5?.error="Confirm Password"
+                }
+
+
+
+                else if(editText5?.text.toString()!=editText4?.text.toString()) {
+                    editText5?.error = "Wrong Password"
                 }
 
             }else{
-
-                var intent=Intent(this,SecondActivity::class.java)
+                val intent=Intent(this,SecondActivity::class.java)
                 startActivity(intent)
-                Toast.makeText(this, editText?.text.toString(),Toast.LENGTH_SHORT).show()
             }
 
 
