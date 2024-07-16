@@ -49,37 +49,39 @@ class MainActivity : AppCompatActivity() {
                 ||editText2?.text.toString().isNullOrEmpty()
                 ||editText3?.text.toString().isNullOrEmpty()
                 ||editText4?.text.toString().isNullOrEmpty()
-                ||editText5?.text.toString().isNullOrEmpty()
+                ==editText5?.text.toString().isNullOrEmpty()
                 ){
-                Toast.makeText(this, "Enter Details",Toast.LENGTH_SHORT).show()
+               Toast.makeText(this, "Enter Details",Toast.LENGTH_SHORT).show()
                if (editText?.text.toString().isNullOrEmpty()){
                    editText?.error="Enter Name"
                }
-                if (editText1?.text.toString().isNullOrEmpty()){
+
+               else if(editText5?.text.toString()!=editText4?.text.toString()) {
+                   editText5?.error = "Wrong Password"
+               }
+
+               else if (editText1?.text.toString().isNullOrEmpty()){
                     editText1?.error="Enter Contact"
                 }
-                if (editText2?.text.toString().isNullOrEmpty()){
+               else if (editText2?.text.toString().isNullOrEmpty()){
                     editText2?.error="Enter Email ID"
                 }
-                if (editText3?.text.toString().isNullOrEmpty()){
+               else if (editText3?.text.toString().isNullOrEmpty()){
                     editText3?.error="Enter Address"
                 }
-                if (editText4?.text.toString().isNullOrEmpty()){
+               else if (editText4?.text.toString().isNullOrEmpty()){
                     editText4?.error="Enter Password"
                 }
-                if (editText5?.text.toString().isNullOrEmpty()){
+               else if (editText5?.text.toString().isNullOrEmpty()){
                     editText5?.error="Confirm Password"
                 }
 
 
 
-                else if(editText5?.text.toString()!=editText4?.text.toString()) {
-                    editText5?.error = "Wrong Password"
-                }
-
             }else{
                 val intent=Intent(this,SecondActivity::class.java)
                 startActivity(intent)
+
             }
 
 
